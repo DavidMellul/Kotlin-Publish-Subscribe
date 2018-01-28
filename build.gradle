@@ -9,11 +9,12 @@ buildscript {
     }
 }
 
-group 'com.davidmellul'
+group 'com.github.DavidMellul'
 version '1.1'
 
-apply plugin: 'maven'
+
 apply plugin: 'java'
+apply plugin: 'maven'
 apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
@@ -34,12 +35,27 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-task fatJar(type: Jar) {
-    manifest {
-        attributes 'Implementation-Title': 'Kotlin-Publish-Subscribe',
-                'Implementation-Version': version
-    }
-    baseName = project.name + '-' + version
-    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-    with jar
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
 }
+
+
+artifacts {
+    archives sourcesJar
+}
+
+// To specify a license in the pom:
+install {
+  repositories.mavenInstaller {
+    pom.project {
+      licenses {
+        license {
+          name 'The Apache Software License, Version 2.0'
+          url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+          distribution 'repo'
+        }
+      }
+    }
+  }
+ }
