@@ -25,9 +25,5 @@ infix fun Any.listenTo(signal: String): SignalAssociation {
 }
 
 infix fun SignalAssociation.then(block: (Any?) -> Unit) = IPC.handles[receiver]?.put(signal, block)
-infix fun Any.stopListenTo(signal: String) {
-    IPC.handles[this]?.remove(signal)
-    if (IPC.handles[this]?.size == 0)
-        IPC.handles.remove(this)
-}
+infix fun Any.stopListenTo(signal: String) =  IPC.handles[this]?.remove(signal)
 
