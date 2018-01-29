@@ -2,7 +2,7 @@
 
 [![](https://jitpack.io/v/DavidMellul/Kotlin-Publish-Subscribe.svg)](https://jitpack.io/#DavidMellul/Kotlin-Publish-Subscribe)
 
-:unicorn:Intuitive, powerful human-readable Kotlin DSL for IPCs & turning anything into a message receiver / broadcaster:unicorn:
+🦄Intuitive and powerful human-readable Kotlin DSL for IPCs & turning anything into a message receiver / broadcaster🦄
 
 :white_check_mark: Seamless integration <br />
 :white_check_mark: No dependencies <br />
@@ -116,10 +116,17 @@ bob listenTo "reply" then { reply ->
 }
 
 bob broadcast SophisticatedSignal("message", "Hello Alice !")
+
+// Output :
+Bob: Hello Alice !
+Alice : Wassup bro
+(Bob thinking)I will break up with her hahaha ! First block her
+(Bob thinking) Ok done !
+Bob: Godd bye !
 ```
 ## Install
 
-#### Gradle :gradle:
+#### Gradle
 First add the Jitpack repository in your root **build.gradle** at the end of repositories:
  ```gradle
  allprojects {
@@ -176,6 +183,8 @@ You could use this lightweight library in such cases:
 The library has been created with Kotlin and has no external dependencies. It means it is fully interoperable with Java ! :purple_heart:
 
 :sparkling_heart: **This library is dead easy to use -> Look at the examples in the [demonstration](#demonstration) :sparkling_heart:**
+
+:triangular_flag_on_post: **This library works only with the Any supertype ==> It means you can turn absolutely everything into a broadcaster / receiver and put everything as parameter associated to a signal.** :triangular_flag_on_post:
 
 ## Contribute
 
