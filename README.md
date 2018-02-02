@@ -140,7 +140,7 @@ First add the Jitpack repository in your root **build.gradle** at the end of rep
  ```
 Then, copy paste this line into your dependencies
 ```gradle
-compile 'com.github.DavidMellul:Kotlin-Publish-Subscribe:4179a66595'
+compile 'com.github.DavidMellul:Kotlin-Publish-Subscribe:-SNAPSHOT'
 ```
 
 #### Maven
@@ -158,7 +158,7 @@ Then, add the dependency
 <dependency>
 	    <groupId>com.github.DavidMellul</groupId>
 	    <artifactId>Kotlin-Publish-Subscribe</artifactId>
-	    <version>4179a66595</version>
+	    <version>-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -167,7 +167,7 @@ Then, add the dependency
 Add both lines to your **build.sbt**
 ```sbt
 resolvers += "jitpack" at "https://jitpack.io"
-libraryDependencies += "com.github.DavidMellul" % "Kotlin-Publish-Subscribe" % "4179a66595"	
+libraryDependencies += "com.github.DavidMellul" % "Kotlin-Publish-Subscribe" % "-SNAPSHOT"	
 ```
 
 ## Use case
